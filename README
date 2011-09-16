@@ -1,0 +1,20 @@
+****************************************************
+Instructions and script are from Ewan's blog:
+http://www.ewanleith.com/blog/15/mongodb-initd-scripthttp://www.ewanleith.com/blog/15/mongodb-initd-script
+
+All you need to do is download the file to your Linux server, rename it from mongodb.txt to mongodb and copy it to /etc/init.d, then fix the permissions. The following commands should do it
+
+cp mongodb.txt /etc/init.d/mongodb
+
+chmod 755 /etc/init.d/mongodb
+
+chown root:root /etc/init.d mongodb
+
+Finally, you just need to run the following 2 commands to set mongodb to start on boot:
+
+chkconfig —add mongodb
+
+chkconfig mongodb on
+
+The script works on Centos, but should work fine on Ubuntu, RHEL, etc with minimal changes.
+
